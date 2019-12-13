@@ -6,7 +6,6 @@ if(isset($_POST['resetPwdEmail'], $_POST['resetPwdPassword'], $_POST['resetPwdTo
     $password=mysqli_real_escape_string($con, $_POST['resetPwdPassword']);
     $token=mysqli_real_escape_string($con, $_POST['resetPwdToken']);
 
-    if (preg_match("(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}", $password)){
     $hpwd = password_hash($password, PASSWORD_BCRYPT);
     
     // Check CSRF Token, otherwise send 401 error
@@ -57,10 +56,7 @@ if(isset($_POST['resetPwdEmail'], $_POST['resetPwdPassword'], $_POST['resetPwdTo
     unset($_SESSION['csrf_token']);
 
 }
-} else {
-    unset($_SESSION['csrf_token']);
-    header("Location: resetpassword");
-}
+
 }
 
 ?>
