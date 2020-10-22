@@ -41,7 +41,7 @@ if (isset($_POST['exportLogsButton'])){
         $mail->Host       = 'smtp.gmail.com';                       // Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
         $mail->Username   = '';                                     // SMTP username
-        $mail->Password   = '';                                        // SMTP password
+        $mail->Password   = '';                                     // SMTP password
         $mail->SMTPSecure = 'ssl';                                  // Enable SSL encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
         $mail->Port       = 465;
 
